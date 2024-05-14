@@ -1,0 +1,27 @@
+:root {
+  /* blue from tailwind as r g b */
+  --color-primary-50: 236 239 249; /* #eceff9 */
+  --color-primary-100: 207 216 251; /* #cfd8fb */
+  --color-primary-200: 166 184 242; /* #a6b8f2 */
+  --color-primary-300: 127 148 243; /* #7f94f3 */
+  --color-primary-400: 94 125 250; /* #5e7dfb */
+  --color-primary-500: 46 78 184; /* #2e4eb8 */
+  --color-primary-600: 30 63 146; /* #1e3f92 */
+  --color-primary-700: 20 43 87; /* #142b57 */
+  --color-primary-800: 15 29 53; /* #0f1d35 */
+  --color-primary-900: 10 20 38; /* #0a1426 */
+  --color-primary-950: 3 5 15; /* #03050f */
+
+  /* slate from tailwind as r g b */
+  --color-muted-50: 248 250 252; /* #f8fafc */
+  --color-muted-100: 241 245 249; /* #f1f5f9 */
+  --color-muted-200: 226 232 240; /* #e2e8f0 */
+  --color-muted-300: 203 213 225; /* #cbd5e1 */
+  --color-muted-400: 148 163 184; /* #94a3b8 */
+  --color-muted-500: 100 116 139; /* #64748b */
+  --color-muted-600: 71 85 105; /* #475569 */
+  --color-muted-700: 51 65 85; /* #334155 */
+  --color-muted-800: 30 41 59; /* #1e293b */
+  --color-muted-900: 15 23 42; /* #0f172a */
+  --color-muted-950: 2 6 23; /* #020617 */
+}

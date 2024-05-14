@@ -1,0 +1,76 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - develop
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - name: Install repo
+        id: repo
+        run: npm install -g pnpm
+      - name: Install Dependcies
+        id: deps
+        run: npm i -D nuxt nuxi
+      - name: Install Packages
+        id: packages
+        run: pnpm i
+      - name: Install build
+        id: packagesbuild
+        run: npm run generate
+      - name: Copy CNAME
+        run: cp CNAME app/.output/public/CNAME
+      - name: Upload artifact for deployment jobs
+        uses: actions/upload-artifact@v3
+        with:
+          name: landing-app
+          path: |
+            app/.output/public
+            fly.toml
+            Dockerfile
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: Development
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: landing-app
+          path: .
+      - name: Upload ftp
+        uses: bayssmekanique/action-simple-file-upload@v2
+        with:
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          host: ${{ secrets.FTP_SERVER }}
+          src: .*
+          dest: bombasypozos.a0001.net/htdocs
