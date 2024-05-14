@@ -1,0 +1,1 @@
+import{d as a,o,f as t,w as s,i as n,M as _}from"./CeYl1e72.js";const c=n("div",null,null,-1),u=a({__name:"starter-collapse",setup(l){return(r,p)=>{const e=_;return o(),t(e,null,{default:s(()=>[c]),_:1})}}});export{u as default};

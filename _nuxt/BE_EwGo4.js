@@ -1,0 +1,1 @@
+import{d as t,aq as o,o as n,f as s,w as r,r as u,ar as c,e as l}from"./CeYl1e72.js";const _=t({__name:"default",setup(f){const{activeLayoutComponent:e}=o();return(a,p)=>(n(),s(c(l(e)),null,{default:r(()=>[u(a.$slots,"default")]),_:3}))}});export{_ as default};

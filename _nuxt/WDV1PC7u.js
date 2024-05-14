@@ -1,0 +1,1 @@
+import{G as a,b as n,r as s,z as t,o as r,ay as c}from"./CeYl1e72.js";const _={};function l(e,f){const o=c;return r(),n("div",null,[s(e.$slots,"default"),t(o)])}const m=a(_,[["render",l]]);export{m as default};

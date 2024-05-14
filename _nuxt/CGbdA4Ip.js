@@ -1,0 +1,1 @@
+import{G as t,f as e,w as n,az as s,o as r,r as c}from"./CeYl1e72.js";const _={};function f(o,l){const a=s;return r(),e(a,null,{default:n(()=>[c(o.$slots,"default")]),_:3})}const u=t(_,[["render",f]]);export{u as default};
